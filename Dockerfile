@@ -8,8 +8,8 @@ ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries
 USER root
 
 RUN yum update -y && \
-  yum install -y wget && \
-  yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel rpm-build && \
+  yum install -y wget epel-release && \
+  yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel rpm-build git nodejs npm && \
   yum clean all
 
 ENV JAVA_HOME /usr/lib/jvm/java
